@@ -28,7 +28,12 @@ class Calculator:
         self.window.geometry("375x667")
         self.window.title("Calculator")
         self.window.resizable(0,0)
-        self.window.iconbitmap("./icon.ico")
+
+        try:
+            self.window.iconbitmap("./icon.ico")
+        except Exception as e:
+            print(f"Error icon: {e}")
+        
 
         # row and column config
         self.window.rowconfigure(list(range(MAIN_ROW)), weight=1, uniform="a")
